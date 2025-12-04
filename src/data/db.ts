@@ -1,4 +1,40 @@
 import type { Guitar } from '../types'
+import type { Countries } from '../types'
+
+export const paymentMethods = [
+    {
+        id: 'card_1',
+        card: 'Visa'
+    },
+    {
+        id: 'card_2',
+        card: 'Mastercard'
+    }
+]
+
+export const countries : Countries[]= [
+    { 
+        code: 'US',
+        name: 'United States'
+    },
+    {
+        code: 'MX',
+        name: 'Mexico'
+    },
+    {
+        code: 'PYG',
+        name: 'Paraguay'
+    },
+    {
+        code: 'ARG',
+        name: 'Argentina'
+    },
+    {
+        code: 'BRZ',
+        name: 'Brazil'
+    }
+]
+
 export const db : Guitar[] = [
     {
         id: 1,

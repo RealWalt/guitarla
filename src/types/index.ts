@@ -6,6 +6,11 @@ export type Guitar = {
     price: number
 }
 
+export type Countries = {
+    code: string
+    name: string
+}
+
 export type CartItem = Guitar & {
     quantity: number
 }

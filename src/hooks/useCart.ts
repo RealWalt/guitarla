@@ -2,8 +2,11 @@
 import { useState, useEffect, useMemo } from "react"
 import { db } from "../data/db"
 import type { CartItem, Guitar } from '../types'
+import { useNavigate } from "react-router-dom"
 
 export const useCart = () => {
+
+  const navigate = useNavigate()
 
 const initialCart = () : CartItem[] => {
     const localStorageCart = localStorage.getItem('cart')
@@ -62,6 +65,7 @@ const initialCart = () : CartItem[] => {
     })
     setCart(updatedCart)
   }
+
 
   function clearCart() {
     setCart([])

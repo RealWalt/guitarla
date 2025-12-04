@@ -1,32 +1,45 @@
 import type { Guitar } from "../types"
 
-
 export type GuitarProps = {
     guitar : Guitar, 
-    addToCart: (item: Guitar  ) => void
+    addToCart: (item: Guitar) => void
 }
 
-
-export default function Guitar({guitar, addToCart} : GuitarProps){
+export default function Guitar({ guitar, addToCart }: GuitarProps) {
 
     const { name, image, description, price } = guitar
 
-
     return (
-        <div className="col-md-6 col-lg-4 my-4 row align-items-center">
-            <div className="col-4">
-                <img className="img-fluid" src={`/img/${image}.jpg`} alt="imagen guitarra" />
+        <div className="flex items-center gap-4 my-6">
+
+            <div className="w-20 shrink-0">
+                <img 
+                    className="w-full h-auto" 
+                    src={`/img/${image}.jpg`} 
+                    alt={name}
+                />
             </div>
-            <div className="col-8">
-                <h3 className="text-black fs-4 fw-bold text-uppercase">{name}</h3>
-                <p>{description}</p>
-                <p className="fw-black text-primary fs-3">${price}</p>
+
+            <div className="flex-1">
+                <h3 className="text-black text-xl font-bold uppercase">
+                    {name}
+                </h3>
+
+                <p className="text-gray-700">{description}</p>
+
+                <p className="font-black text-orange-500 text-2xl">
+                    ${price}
+                </p>
+
                 <button 
                     type="button"
-                    className="btn btn-dark w-100"
+                    className="bg-gray-900 hover:bg-gray-700 text-white w-full py-2 rounded mt-3 font-bold"
                     onClick={() => addToCart(guitar)}
-                >Agregar al Carrito</button>
+                >
+                    Agregar al Carrito
+                </button>
             </div>
+
         </div>
     )
 }
